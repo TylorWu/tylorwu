@@ -1,0 +1,18 @@
+server:
+  port: 8001 # 随机端口
+
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        refresh-enabled: true
+        name: ${spring.application.name}
+        group: DEFAULT_GROUP
+        namespace: TylorWu-GJ
+        server-addr: https://nacos-dev.myysq.com.cn
+        username: ywy
+        password: Uy7qlRh6pOkJwWxQgmvS
+        file-extension: yml
+
+

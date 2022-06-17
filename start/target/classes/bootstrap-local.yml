@@ -1,0 +1,36 @@
+server:
+  port: 8033
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ywy-dev-tenant-external.mysql.rds.aliyuncs.com:3306/dev_support?serverTimezone=Asia/Shanghai
+    username: dev_rw
+    password: hcq1xVHuGHZIO0WiLZVm
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 10.9.60.140:9876
+        bindings:
+
+#spring:
+#  cloud:
+#    nacos:
+#      config:
+#        enabled: true
+#        refresh-enabled: true
+#        name: ${spring.application.name}
+#        group: DEFAULT_GROUP
+#        namespace: tylorwu
+#        server-addr: https://nacos-dev.myysq.com.cn
+#        username: ywy
+#        password: Uy7qlRh6pOkJwWxQgmvS
+#        file-extension: yml
+#        sharedConfigs:
+#          - data-id: tylorwu
+#            refresh: true
+
+
+#server:
+#  port: ${random.int[10000,19999]} # 随机端口，方便启动多个消费者

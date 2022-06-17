@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: demo-consumer-application
+  cloud:
+    # Spring Cloud Stream 配置项，对应 BindingServiceProperties 类
+    stream:
+      # Binding 配置项，对应 BindingProperties Map
+      bindings:
+        # 配置: 名称+ out/in  + 通道,旧版用了@input @out @StreamListener,新版Spring现在不再使用基于注释的配置，而是使用检测到的Consumer / Function / Supplier的@Bean来定义流
+        demoConsumer-in-0: { destination: DEMO-TOPIC-01, content-type: application/json,group: demo01-consumer-group-DEMO-TOPIC-01 }
+      # Spring Cloud Stream RocketMQ 配置项
+      rocketmq:
+        # RocketMQ Binder 配置项，对应 RocketMQBinderConfigurationProperties 类
+        binder:
+          name-server: 120.48.19.183:9876 # RocketMQ Namesrv 地址
+        # RocketMQ 自定义 Binding 配置项，对应 RocketMQBindingProperties Map
+        bindings:
+          demoConsumer-in-0: { consumer: { enabled: true,broadcasting: false,orderly: false,tags: } }
+          # RocketMQ Consumer 配置项，对应 RocketMQConsumerProperties 类
+          # enabled 是否开启消费，默认为 true
+          # broadcasting 是否使用广播消费，默认为 false 使用集群消费（最新版已废弃，用messageModel）# messageModel CLUSTERING（默认值）：表示集群消费,BROADCASTING：表示广播消费
+          # orderly: false # 是否顺序消费，默认为 false 并发消费
+          # tags: yunai || yutou # 基于 Tag 订阅，多个 Tag 使用 || 分隔，默认为空  （最新版tags改为subscription）
+          # sql: # 基于 SQL92 过滤消息，可以通过设置 sql 配置项。默认为空
+          # MaxReconsumeTimes 设置消息消费失败的最大重试次数，默认值：16
+          # ConsumeThreadNums 设置Consumer实例的消费线程数，默认值：20
+
+server:
+  port: ${random.int[10000,19999]} # 随机端口，方便启动多个消费者
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
+  endpoint:
+    # Health 端点配置项，对应 HealthProperties 配置类
+    health:
+      enabled: true # 是否开启。默认为 true 开启。
+      show-details: always  # 何时显示完整的健康信息。默认为 NEVER 都不展示。可选 WHEN_AUTHORIZED 当经过授权的用户；可选 ALWAYS 总是展示。

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: demo-producer-application
+  cloud:
+    # Spring Cloud Stream 配置项，对应 BindingServiceProperties 类
+    stream:
+      # Binding 配置项，对应 BindingProperties Map
+      bindings:
+        # 配置: 名称+ out/in  + 通道,旧版用了@input @out @StreamListener,新版Spring现在不再使用基于注释的配置，而是使用检测到的Consumer / Function / Supplier的@Bean来定义流
+        demoProducer-out-0: { destination: DEMO-TOPIC-01 }
+      # Spring Cloud Stream RocketMQ 配置项
+      rocketmq:
+        # RocketMQ Binder 配置项，对应 RocketMQBinderConfigurationProperties 类
+        binder:
+          name-server: 120.48.19.183:9876 # RocketMQ Namesrv 地址
+        # RocketMQ 自定义 Binding 配置项，对应 RocketMQBindingProperties Map
+        bindings:
+          demoProducer-out-0: { producer: { group: test,sync: true,transactional: true } }
+          # RocketMQ Producer 配置项，对应 RocketMQProducerProperties 类
+bindingName:
+  demo: demoProducer-out-0
+server:
+  port: 18080
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
+  endpoint:
+    # Health 端点配置项，对应 HealthProperties 配置类
+    health:
+      enabled: true # 是否开启。默认为 true 开启。
+      show-details: ALWAYS # 何时显示完整的健康信息。默认为 NEVER 都不展示。可选 WHEN_AUTHORIZED 当经过授权的用户；可选 ALWAYS 总是展示。

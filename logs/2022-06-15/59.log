@@ -1,0 +1,6 @@
+2022-06-15 17:26:07 [com.xxl.job.core.thread.JobThread#run]-[133]-[xxl-job, JobThread-5-1655285167861] <br>----------- xxl-job job execute start -----------<br>----------- Param:
+2022-06-15 17:26:07 [com.learn.tylorwu.xxljob.jobHandler.TestXxJob#shardingJobHandler]-[51]-[xxl-job, JobThread-5-1655285167861] 分片参数：当前分片序号 = 1, 总分片数 = 2
+2022-06-15 17:26:07 [com.learn.tylorwu.xxljob.jobHandler.TestXxJob#shardingJobHandler]-[58]-[xxl-job, JobThread-5-1655285167861] 第 0 片, 忽略
+2022-06-15 17:26:07 [com.learn.tylorwu.xxljob.jobHandler.TestXxJob#shardingJobHandler]-[56]-[xxl-job, JobThread-5-1655285167861] 第 1 片, 命中分片开始处理
+2022-06-15 17:26:07 [com.xxl.job.core.thread.JobThread#run]-[179]-[xxl-job, JobThread-5-1655285167861] <br>----------- xxl-job job execute end(finish) -----------<br>----------- Result: handleCode=200, handleMsg = null
+2022-06-15 17:26:07 [com.xxl.job.core.thread.TriggerCallbackThread#callbackLog]-[197]-[xxl-job, executor TriggerCallbackThread] <br>----------- xxl-job job callback finish.

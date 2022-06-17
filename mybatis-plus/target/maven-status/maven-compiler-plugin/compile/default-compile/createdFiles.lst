@@ -1,0 +1,6 @@
+com/learn/tylorwu/base/entity/ResourceTypeDO.class
+com/learn/tylorwu/base/application/ResourceTypeQueryService.class
+com/learn/tylorwu/base/entity/BaseEntity.class
+com/learn/tylorwu/base/dao/ResourceTypeMapper.class
+com/learn/tylorwu/base/controller/ResourceTypeController.class
+com/learn/tylorwu/base/entity/ResourceTypeDO$ResourceTypeDOBuilder.class
