@@ -37,9 +37,9 @@
         <xxl-job-core.version>2.3.1</xxl-job-core.version>
 
         <!--Spring相关-->
-        <spring-boot.version>2.4.2</spring-boot.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
 
         <!--数据库相关-->
         <mybatis-plus-boot-starter.version>3.5.0</mybatis-plus-boot-starter.version>

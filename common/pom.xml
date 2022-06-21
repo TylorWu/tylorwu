@@ -19,12 +19,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--Bootstrap-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-
         <!--nacos-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

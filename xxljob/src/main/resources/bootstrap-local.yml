@@ -9,10 +9,10 @@ spring:
         refresh-enabled: true
         name: ${spring.application.name}
         group: DEFAULT_GROUP
-        namespace: TylorWu-GJ
-        server-addr: https://nacos-dev.myysq.com.cn
-        username: ywy
-        password: Uy7qlRh6pOkJwWxQgmvS
+        namespace: TylorWu
+        server-addr: 120.48.19.183:8848
+        username: nacos
+        password: nacos
         file-extension: yml
 
 
